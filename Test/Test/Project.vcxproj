@@ -173,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MicroMath\detail\core\Core.h" />
-    <ClInclude Include="..\..\MicroMath\detail\core\VecImpl.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\VecType.h" />
     <ClInclude Include="..\..\MicroMath\MicroMath.h" />
   </ItemGroup>

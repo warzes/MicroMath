@@ -27,8 +27,5 @@
     <ClInclude Include="..\..\MicroMath\detail\core\VecType.h">
       <Filter>MicroMath\detail\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\MicroMath\detail\core\VecImpl.h">
-      <Filter>MicroMath\detail\core</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

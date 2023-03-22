@@ -37,7 +37,6 @@
 //=============================================================================
 #include "detail/core/Core.h"
 #include "detail/core/VecType.h"
-#include "detail/core/VecImpl.h"
 
 //=============================================================================
 // Support Collisions
