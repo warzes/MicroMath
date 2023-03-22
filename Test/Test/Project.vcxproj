@@ -172,7 +172,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\MicroMath\detail\collisions\Core.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\Core.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\MathFunc.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\MatType.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\QuatType.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\VecType.h" />
     <ClInclude Include="..\..\MicroMath\MicroMath.h" />
   </ItemGroup>

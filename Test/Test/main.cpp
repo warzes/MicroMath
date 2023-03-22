@@ -2,6 +2,10 @@
 #include <cstdio>
 #include <string>
 
+// FWK - collisions
+// mathc - collisions
+// glm
+
 void Error(const std::string& msg)
 {
 	puts(("\tERROR: " + msg + ": fail").c_str());
@@ -178,52 +182,62 @@ int main(
 
 		// Test 3
 		{
-			Vec3<float> vecf(float1, float2, float3);
-			if( vecf.x != float1 || vecf.y != float2 || vecf.z != float3 )
+			Vec2<float> vecf1(float1, float2);
+			Vec3<float> vecf2(vecf1, float3);
+			if( vecf2.x != float1 || vecf2.y != float2 || vecf2.z != float3 )
 			{
-				Error("Test 3: Vec3(x, y, z)");
+				Error("Test 3: Vec3(Vec2, z)");
 			}
 		}
 
 		// Test 4
+		{
+			Vec3<float> vecf(float1, float2, float3);
+			if( vecf.x != float1 || vecf.y != float2 || vecf.z != float3 )
+			{
+				Error("Test 4: Vec3(x, y, z)");
+			}
+		}
+
+		// Test 5
 		{
 			Vec3<float> vecf1(float1, float2, float3);
 			Vec3<float> vecf2(float3, float1, float2);
 			vecf2 = vecf1;
 			if( vecf2.x != float1 || vecf2.y != float2 || vecf2.z != float3 )
 			{
-				Error("Test 4: Vec3 = Vec3");
-			}
-		}
-
-		// Test 5
-		{
-			Vec3<float> vecf;
-			vecf = float1;
-			if( vecf.x != float1 || vecf.y != float1 || vecf.z != float1 )
-			{
-				Error("Test 5: Vec3 = scalar");
+				Error("Test 5: Vec3 = Vec3");
 			}
 		}
 
 		// Test 6
 		{
+			Vec3<float> vecf;
+			vecf = float1;
+			if( vecf.x != float1 || vecf.y != float1 || vecf.z != float1 )
+			{
+				Error("Test 6: Vec3 = scalar");
+			}
+		}
+
+		// Test 7
+		{
 			Vec3<float> vecf(float1, float2, float3);
 			if( vecf[0] != float1 || vecf[1] != float2 || vecf[2] != float3 )
 			{
-				Error("Test 6: Vec3[]");
+				Error("Test 7: Vec3[]");
 			}
 		}
 
 
-		// Test 7
+		// Test 8
 		{
 			Vec3<float> vecf1(float1, float2, float3);
 			Vec3<float> vecf2(float1, float2, float3);
 
 			if( vecf1.x != vecf2.x || vecf1.y != vecf2.y || vecf1.z != vecf2.z || !(vecf1 == vecf2))
 			{
-				Error("Test 7: operator==");
+				Error("Test 8: operator==");
 			}
 		}
 
@@ -234,7 +248,7 @@ int main(
 
 			if( vecf.x != -float1 || vecf.y != -float2 || vecf.z != -float3 )
 			{
-				Error("Test 8: operator-");
+				Error("Test 9: operator-");
 			}
 		}
 
@@ -313,52 +327,63 @@ int main(
 
 	// Test 3
 	{
-		Vec4<float> vecf(float1, float2, float3, float4);
-		if( vecf.x != float1 || vecf.y != float2 || vecf.z != float3 || vecf.w != float4 )
+		Vec3<float> vecf1(float1, float2, float3);
+		Vec4<float> vecf2(vecf1, float4);
+		if( vecf2.x != float1 || vecf2.y != float2 || vecf2.z != float3 || vecf2.w != float4 )
 		{
-			Error("Test 3: Vec4(x, y, z)");
+			Error("Test 3: Vec4(Vec3, nw)");
 		}
 	}
 
+
 	// Test 4
+	{
+		Vec4<float> vecf(float1, float2, float3, float4);
+		if( vecf.x != float1 || vecf.y != float2 || vecf.z != float3 || vecf.w != float4 )
+		{
+			Error("Test 4: Vec4(x, y, z)");
+		}
+	}
+
+	// Test 5
 	{
 		Vec4<float> vecf1(float1, float2, float3, float4);
 		Vec4<float> vecf2(float4, float1, float2, float3);
 		vecf2 = vecf1;
 		if( vecf2.x != float1 || vecf2.y != float2 || vecf2.z != float3 || vecf2.w != float4 )
 		{
-			Error("Test 4: Vec4 = Vec4");
-		}
-	}
-
-	// Test 5
-	{
-		Vec4<float> vecf;
-		vecf = float1;
-		if( vecf.x != float1 || vecf.y != float1 || vecf.z != float1 || vecf.w != float1 )
-		{
-			Error("Test 5: Vec4 = scalar");
+			Error("Test 5: Vec4 = Vec4");
 		}
 	}
 
 	// Test 6
 	{
+		Vec4<float> vecf;
+		vecf = float1;
+		if( vecf.x != float1 || vecf.y != float1 || vecf.z != float1 || vecf.w != float1 )
+		{
+			Error("Test 6: Vec4 = scalar");
+		}
+	}
+
+	// Test 7
+	{
 		Vec4<float> vecf(float1, float2, float3, float4);
 		if( vecf[0] != float1 || vecf[1] != float2 || vecf[2] != float3 || vecf[3] != float4 )
 		{
-			Error("Test 6: Vec4[]");
+			Error("Test 7: Vec4[]");
 		}
 	}
 
 
-	// Test 7
+	// Test 8
 	{
 		Vec4<float> vecf1(float1, float2, float3, float4);
 		Vec4<float> vecf2(float1, float2, float3, float4);
 
 		if( vecf1.x != vecf2.x || vecf1.y != vecf2.y || vecf1.z != vecf2.z || vecf1.w != vecf2.w || !(vecf1 == vecf2) )
 		{
-			Error("Test 7: operator==");
+			Error("Test 8: operator==");
 		}
 	}
 
@@ -369,7 +394,7 @@ int main(
 
 		if( vecf.x != -float1 || vecf.y != -float2 || vecf.z != -float3 || vecf.w != -float4 )
 		{
-			Error("Test 8: operator-");
+			Error("Test 9: operator-");
 		}
 	}
 

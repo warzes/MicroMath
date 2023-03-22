@@ -104,6 +104,14 @@ constexpr size_t Countof(T const (&)[N])
 //=============================================================================
 // FWD
 //=============================================================================
+template<typename T> class Vec2;
+template<typename T> class Vec3;
+template<typename T> class Vec4;
+#if MM_ENABLE_QUATERNION
+template<typename T> class Quat;
+#endif
+template<typename T> class Mat3;
+template<typename T> class Mat4;
 
 //template<size_t N, typename T> class Vec;
 //

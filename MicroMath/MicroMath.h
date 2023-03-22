@@ -24,6 +24,10 @@
 #	define MM_ENABLE_COLLISIONS          MM_ENABLE
 #endif
 
+#if !defined(MM_ENABLE_QUATERNION)
+#	define MM_ENABLE_QUATERNION          MM_ENABLE
+#endif
+
 #if !defined(MM_ENABLE_SUPPORT_DOUBLE_TYPE)
 #	define MM_ENABLE_SUPPORT_DOUBLE_TYPE MM_ENABLE
 #endif
@@ -37,10 +41,15 @@
 //=============================================================================
 #include "detail/core/Core.h"
 #include "detail/core/VecType.h"
+#if MM_ENABLE_QUATERNION
+#	include "detail/core/QuatType.h"
+#endif
+#include "detail/core/MatType.h"
+#include "detail/core/MathFunc.h"
 
 //=============================================================================
 // Support Collisions
 //=============================================================================
 #if MM_ENABLE_COLLISIONS
-
+#	include "detail/collisions/Core.h"
 #endif

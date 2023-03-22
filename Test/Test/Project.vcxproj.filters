@@ -27,5 +27,17 @@
     <ClInclude Include="..\..\MicroMath\detail\core\VecType.h">
       <Filter>MicroMath\detail\core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\QuatType.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\collisions\Core.h">
+      <Filter>MicroMath\detail\collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\MatType.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\MathFunc.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
