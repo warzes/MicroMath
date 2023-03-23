@@ -173,12 +173,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MicroMath\detail\collisions\Core.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\Common.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\Core.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\Exponential.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\MathFunc.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\MatType.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\QuatType.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\Scalar.h" />
+    <ClInclude Include="..\..\MicroMath\detail\core\Trigonometric.h" />
     <ClInclude Include="..\..\MicroMath\detail\core\VecType.h" />
     <ClInclude Include="..\..\MicroMath\MicroMath.h" />
+    <ClInclude Include="VecTypeTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

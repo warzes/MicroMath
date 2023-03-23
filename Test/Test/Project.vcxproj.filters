@@ -16,6 +16,9 @@
     <Filter Include="MicroMath\detail\core">
       <UniqueIdentifier>{ba63f018-1308-4451-a64e-1029596fa014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{6a50d770-73f4-464e-87ba-f852c8826b8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MicroMath\MicroMath.h">
@@ -37,6 +40,21 @@
       <Filter>MicroMath\detail\core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\MicroMath\detail\core\MathFunc.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\Scalar.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VecTypeTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\Trigonometric.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\Exponential.h">
+      <Filter>MicroMath\detail\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\MicroMath\detail\core\Common.h">
       <Filter>MicroMath\detail\core</Filter>
     </ClInclude>
   </ItemGroup>

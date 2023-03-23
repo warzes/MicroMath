@@ -8,6 +8,10 @@
 #define MM_DISABLE 0
 #define MM_ENABLE 1
 
+//-----------------------------------------------------------------------------
+// Core Configuration Lib
+//-----------------------------------------------------------------------------
+
 #if !defined(MM_ENABLE_NOSTDHEADER)
 #	define MM_ENABLE_NOSTDHEADER         MM_DISABLE
 #endif
@@ -20,6 +24,9 @@
 #	define MM_ENABLE_ASSERT              MM_ENABLE
 #endif
 
+//-----------------------------------------------------------------------------
+// Configuration Features
+//-----------------------------------------------------------------------------
 #if !defined(MM_ENABLE_COLLISIONS)
 #	define MM_ENABLE_COLLISIONS          MM_ENABLE
 #endif
@@ -40,11 +47,15 @@
 // Core
 //=============================================================================
 #include "detail/core/Core.h"
+#include "detail/core/Scalar.h"
 #include "detail/core/VecType.h"
 #if MM_ENABLE_QUATERNION
 #	include "detail/core/QuatType.h"
 #endif
 #include "detail/core/MatType.h"
+#include "detail/core/Trigonometric.h"
+#include "detail/core/Exponential.h"
+#include "detail/core/Common.h"
 #include "detail/core/MathFunc.h"
 
 //=============================================================================

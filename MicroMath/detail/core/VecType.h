@@ -169,8 +169,8 @@ template<typename T> MM_INLINE constexpr Vec2<T>::Vec2(T nx, T ny) : x(nx), y(ny
 
 template<typename T> MM_INLINE constexpr Vec2<T>& Vec2<T>::operator=(T scalar) { x = y = scalar; return *this; }
 
-template<typename T> MM_INLINE constexpr T& Vec2<T>::operator[](size_t i) { MM_ASSERT(i < Vec2<T>::length); return (&x)[i]; }
-template<typename T> MM_INLINE constexpr T const& Vec2<T>::operator[](size_t i) const { MM_ASSERT(i < Vec2<T>::length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T& Vec2<T>::operator[](size_t i) { MM_ASSERT(i < length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T const& Vec2<T>::operator[](size_t i) const { MM_ASSERT(i < length); return (&x)[i]; }
 
 template<typename T> MM_INLINE bool operator==(const Vec2<T>& left, const Vec2<T>& right) { return left.x == right.x && left.y == right.y; }
 template<typename T> MM_INLINE bool operator!=(const Vec2<T>& left, const Vec2<T>& right) { return left.x != right.x || left.y != right.y; }
@@ -188,7 +188,6 @@ Vector2OperatorImpl(-)
 Vector2OperatorImpl(+)
 Vector2OperatorImpl(*)
 Vector2OperatorImpl(/)
-
 #undef Vector2OperatorImpl
 
 //=============================================================================
@@ -201,8 +200,8 @@ template<typename T> MM_INLINE constexpr Vec3<T>::Vec3(T nx, T ny, T nz) : x(nx)
 
 template<typename T> MM_INLINE constexpr Vec3<T>& Vec3<T>::operator=(T scalar) { x = y = z = scalar; return *this; }
 
-template<typename T> MM_INLINE constexpr T& Vec3<T>::operator[](size_t i) { MM_ASSERT(i < Vec3<T>::length); return (&x)[i]; }
-template<typename T> MM_INLINE constexpr T const& Vec3<T>::operator[](size_t i) const { MM_ASSERT(i < Vec3<T>::length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T& Vec3<T>::operator[](size_t i) { MM_ASSERT(i < length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T const& Vec3<T>::operator[](size_t i) const { MM_ASSERT(i < length); return (&x)[i]; }
 
 template<typename T> MM_INLINE bool operator==(const Vec3<T>& left, const Vec3<T>& right) { return left.x == right.x && left.y == right.y && left.z == right.z; }
 template<typename T> MM_INLINE bool operator!=(const Vec3<T>& left, const Vec3<T>& right) { return left.x != right.x || left.y != right.y || left.z != right.z; }
@@ -220,7 +219,6 @@ Vector3OperatorImpl(-);
 Vector3OperatorImpl(+);
 Vector3OperatorImpl(*);
 Vector3OperatorImpl(/);
-
 #undef Vector3OperatorImpl
 
 //=============================================================================
@@ -233,8 +231,8 @@ template<typename T> MM_INLINE constexpr Vec4<T>::Vec4(T nx, T ny, T nz, T nw) :
 
 template<typename T> MM_INLINE constexpr Vec4<T>& Vec4<T>::operator=(T scalar) { x = y = z = w = scalar; return *this; }
 
-template<typename T> MM_INLINE constexpr T& Vec4<T>::operator[](size_t i) { MM_ASSERT(i < Vec4<T>::length); return (&x)[i]; }
-template<typename T> MM_INLINE constexpr T const& Vec4<T>::operator[](size_t i) const { MM_ASSERT(i < Vec4<T>::length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T& Vec4<T>::operator[](size_t i) { MM_ASSERT(i < length); return (&x)[i]; }
+template<typename T> MM_INLINE constexpr T const& Vec4<T>::operator[](size_t i) const { MM_ASSERT(i < Vec4<T>::ength); return (&x)[i]; }
 
 template<typename T> MM_INLINE bool operator==(const Vec4<T>& left, const Vec4<T>& right) { return left.x == right.x && left.y == right.y && left.z == right.z && left.w == right.w; }
 template<typename T> MM_INLINE bool operator!=(const Vec4<T>& left, const Vec4<T>& right) { return left.x != right.x || left.y != right.y || left.z != right.z || left.w != right.w; }
@@ -252,5 +250,4 @@ Vector4OperatorImpl(-);
 Vector4OperatorImpl(+);
 Vector4OperatorImpl(*);
 Vector4OperatorImpl(/);
-
 #undef Vector4OperatorImpl

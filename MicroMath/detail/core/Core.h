@@ -157,3 +157,41 @@ template<typename T> class Mat4;
 //{
 //
 //};
+
+
+//=============================================================================
+// private impl
+//=============================================================================
+
+// возможно удалить
+namespace detail
+{
+	template<template<typename T> class Vec, typename T> struct functor1;
+	template<template<typename T> class Vec, typename T> struct functor2;
+
+	template<typename T> struct functor1<Vec2, T>
+	{
+		inline constexpr static Vec2<T> Call(T(*Func)(T arg), const Vec2<T>& v) { return { Func(v.x), Func(v.y) }; }
+	};
+	template<typename T> struct functor1<Vec3, T>
+	{
+		inline constexpr static Vec3<T> Call(T(*Func)(T arg), const Vec3<T>& v) { return { Func(v.x), Func(v.y), Func(v.z) }; }
+	};
+	template<typename T> struct functor1<Vec4, T>
+	{
+		inline constexpr static Vec4<T> Call(T(*Func)(T arg), const Vec4<T>& v) { return { Func(v.x), Func(v.y), Func(v.z), Func(v.w) }; }
+	};
+
+	template<typename T> struct functor2<Vec2, T>
+	{
+		inline constexpr static Vec2<T> Call(T(*Func)(T arg1, T arg2), const Vec2<T>& a, const Vec2<T>& b) { return { Func(a.x, b.x), Func(a.y, b.y) }; }
+	};
+	template<typename T> struct functor2<Vec3, T>
+	{
+		inline constexpr static Vec3<T> Call(T(*Func)(T arg1, T arg2), const Vec3<T>& a, const Vec3<T>& b) { return { Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z) }; }
+	};
+	template<typename T> struct functor2<Vec4, T>
+	{
+		inline constexpr static Vec4<T> Call(T(*Func)(T arg1, T arg2), const Vec4<T>& a, const Vec4<T>& b) { return { Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z), Func(a.w, b.w) }; }
+	};
+}
